@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="contact-header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="AJ Logo">
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i><br>Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i><br>About</a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i><br>Projects</a></li>
+                <li><a href="resume.html"><i class="fas fa-file"></i><br>Resume</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i><br>Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-text">
+            <h1>CONTACT</h1>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-grid">
+
+            <section class="form-wrapper">
+                <p class="panel-heading">Send a message</p>
+                <form id="contact-form" action="https://formspree.io/f/xpqjyykd" method="POST">
+
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        <span class="focus-line"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="your@email.com" required>
+                        <span class="focus-line"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                        <span class="focus-line"></span>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="btn-submit">Send Message</button>
+                    <div id="form-status"></div>
+                </form>
+            </section>
+
+            <section class="info-wrapper">
+                <p class="panel-heading">Get in touch</p>
+
+                <div class="info-block">
+                    <h2>Email</h2>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:joyzemagat@gmail.com">joyzemagat@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h2>Social Media</h2>
+                    <ul class="social-list">
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/joyzemagat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/eijayem" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-facebook"></i>
+                            <a href="https://www.facebook.com/jyzmagat" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/joyzemagat" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bottom-section">
+        <div class="social-bar">
+            <a href="https://www.linkedin.com/in/joyzemagat/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/eijayem" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/jyzmagat" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/joyzemagat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="copyright-container">
+            <p>&copy; 2025 Antoinette Joyze M. Magat. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

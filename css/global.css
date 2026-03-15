@@ -1,0 +1,208 @@
+:root {
+    --jacarta: #3A345B;
+    --queen-pink: #F3C8DD;
+    --middle-purple: #D183A9;
+    --old-lavender: #71557A;
+    --brown-chocolate: #4B1535;
+    --light-pink: #FADDEB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    width: 100%;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.logo:hover img {
+    transform: rotateY(360deg);
+}
+
+.nav-links {
+    display: flex; 
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+/* HIDE ICONS ON DESKTOP */
+.nav-links li a i {
+    display: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--queen-pink);
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px; 
+    bottom: 0;
+    left: 0;
+    background-color: var(--queen-pink);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: var(--middle-purple);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* FOOTER */
+.bottom-section {
+    background-color: var(--old-lavender);
+    padding: 100px 10% 30px 10%;
+}
+
+.social-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px; 
+    gap: 18px;
+}
+
+.social-bar a {
+    color: var(--queen-pink);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-bar a:hover {
+    color: var(--brown-chocolate);
+    transform: translateY(-5px);
+}
+
+.copyright-container p {
+    color: var(--queen-pink);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* HAMBURGER CONTROLS */
+.menu-checkbox { display: none; }
+.hamburger { display: none; }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 100;
+        position: relative;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: var(--queen-pink);
+        border-radius: 2px;
+        transition: 0.3s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;
+        height: 100vh;
+        background-color: var(--jacarta);
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+        padding: 120px 30px;
+        align-content: center;
+        transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 90;
+    }
+
+    .nav-links li a i {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: var(--queen-pink);
+    }
+
+    .nav-links li {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 35px 10px;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+        color: var(--queen-pink);
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a::after { display: none; }
+
+    .menu-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+
+    .menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .bottom-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 10% 30px 10%;
+    }
+    .social-bar {
+        justify-content: center;
+        width: 100%;
+    }
+}

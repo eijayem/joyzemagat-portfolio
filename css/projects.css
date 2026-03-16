@@ -122,6 +122,10 @@ body {
     letter-spacing: 0.05em;
 }
 
+.card-content-top {
+    display: contents;
+}
+
 /* THUMBNAIL */
 .left-column {
     display: contents;
@@ -163,13 +167,6 @@ body {
     gap: 0;
 }
 
-.project-info-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 10px;
-}
-
 .project-info h2 {
     font-size: 1.9rem;
     font-weight: 800;
@@ -194,6 +191,7 @@ body {
     margin-bottom: 14px;
     margin-left: 0;
     margin-top: 0;
+    order: -1;
 }
 
 .project-card[data-year="1"] .project-tools::before { content: "1st Year"; }
@@ -286,21 +284,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* GRID LAYOUT */
-.card-content-top {
-    display: contents;
-}
-
-.project-info {
-    grid-column: 3;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-tools {
-    order: -1;
-}
-
 /* FOOTER */
 .bottom-section {
     padding: 60px 5% 30px;
@@ -322,7 +305,8 @@ body {
     to   { opacity: 1; }
 }
 
-/* RESPONSIVE STYLES */
+/* RESPONSIVE */
+
 @media (max-width: 1024px) {
     .hero-text h1 { font-size: 6rem; }
 
@@ -377,8 +361,8 @@ body {
     }
 
     .project-card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
         gap: 16px;
         padding: 28px 0;
     }
@@ -387,18 +371,35 @@ body {
         display: none;
     }
 
+    .card-content-top {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .left-column {
+        display: block;
+        width: 100%;
+    }
+
     .project-image {
         width: 100%;
-        height: 180px;
-        grid-column: 1;
+        height: 200px;
+        grid-column: unset;
     }
 
     .project-info {
-        grid-column: 1;
+        grid-column: unset;
+        width: 100%;
     }
 
     .project-info h2 {
         font-size: 1.5rem;
+    }
+
+    .project-info p {
+        max-width: 100%;
     }
 
     .bottom-section {
@@ -414,4 +415,6 @@ body {
     .hero-text h1 { font-size: 2.8rem; }
 
     .project-card { padding: 20px 0; }
+
+    .project-image { height: 180px; }
 }

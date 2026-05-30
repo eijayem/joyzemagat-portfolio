@@ -104,6 +104,7 @@ body {
 .project-card:nth-child(4) { animation-delay: 0.45s; }
 .project-card:nth-child(5) { animation-delay: 0.55s; }
 .project-card:nth-child(6) { animation-delay: 0.65s; }
+.project-card:nth-child(7) { animation-delay: 0.75s; }
 
 .project-card:hover {
     background: rgba(142, 120, 150, 0.08);
